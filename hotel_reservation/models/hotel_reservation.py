@@ -176,6 +176,10 @@ class HotelReservation(models.Model):
                                 'order_id', 'invoice_id', string='Folio')
     no_of_folio = fields.Integer('Folio', compute="_compute_folio_id")
     dummy = fields.Datetime('Dummy')
+    guest_ids = fields.Many2many("res.partner", "hotel_reservation_guest_rel", "reservation_id", 
+                                 "guest_id", string="Guests",
+                                 readonly=True,
+                                 states={'draft': [('readonly', False)]},)
 
     @api.multi
     def _compute_folio_id(self):

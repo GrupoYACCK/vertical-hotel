@@ -76,6 +76,9 @@
                         <page string='History'>
                             <field name='folio_id' readonly='1' />
                         </page>
+                        <page string='Guests'>
+                            <field name='guest_ids' />
+                        </page>
                     </notebook>
                 </sheet>
             </form>

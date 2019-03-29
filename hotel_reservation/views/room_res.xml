@@ -47,7 +47,20 @@
                                     <span t-field="info.reservation_no" />
                                 </td>
                                 <td>
-                                    <span t-field="info.partner_id.name" />
+                                    <span t-field="info.partner_id.name" /> <span t-field="info.partner_id.country_id" /> <span t-field="info.partner_id.state_id" />  
+                                    <table t-if="info.guest_ids" class="table table-condensed">
+                                        <tr t-foreach="info.guest_ids" t-as="guest">
+                                            <td >
+                                                <span t-field="guest.name" />
+                                            </td>
+                                            <td >
+                                                <span t-field="guest.country_id" />
+                                            </td>
+                                            <td >
+                                                <span t-field="guest.state_id" />
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </td>
                                 <td>
                                     <span t-field="info.checkin" />
